@@ -1,0 +1,10 @@
+    @Query("SELECT i as price FROM Ingredient i WHERE (:name is NULL OR name LIKE %:name%)")
+    List<Ingredient> findByCriteria(@Param("name") String name, Pageable pageable);
+
+    @RequestParam(required = false) String name,
+    @RequestParam(defaultValue = "0") int page,
+    @RequestParam(defaultValue = "10") int size
+
+    /ingredients
+    /ingredients?name="to"
+    /ingredients?name="to"&page=1&size=10
